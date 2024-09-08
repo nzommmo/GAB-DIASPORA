@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Toggle Content</title>
+</head>
+<body>
+    <section class="container">
+        <div id="holder">
+            <div id="MoneyGram" class="channel" data-channel="moneygram">
+                <p>Money Gram</p>
+            </div>
+            <div id="WesternUnion" class="channel" data-channel="westernunion">
+                <p>Western Union</p>
+            </div>
+        </div>
+
+        <div id="Channels-Content">
+            <div id="Sub-Content">
+                <ul>
+                    <li class="Sub-Content-list" id="about-item">About Money Gram</li>
+                    <li class="Sub-Content-list" id="features-item">Features</li>
+                    <li class="Sub-Content-list" id="pricing-item">Product Pricing</li>
+                    <li class="Sub-Content-list" id="charges-item">Charges</li>
+                    <li class="Sub-Content-list" id="documentation-item">Documentation</li>
+                    <li class="Sub-Content-list" id="conditions-item">Conditions</li>
+                </ul>
+            </div>
+
+            <!-- Content section for details -->
+            <div id="content-display" class="content-section">
+                <p>Select a section to view content</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

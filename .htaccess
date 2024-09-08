@@ -1,3 +1,16 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /GAB-DIASPORA/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /GAB-DIASPORA/index.php [L]
+</IfModule>
+
+
+
+
 php_value upload_max_filesize 170M
 php_value post_max_size 170M
 php_value memory_limit 256M
