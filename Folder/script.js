@@ -30,9 +30,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Function to update the content and active state
     function updateContent(section) {
         const channelData = content[currentChannel];
         contentDisplay.innerHTML = `<p>${channelData[section]}</p>`;
+        setActive(section);
+    }
+
+    // Function to handle the active class for each section
+    function setActive(section) {
+        const items = [aboutItem, featuresItem, pricingItem, chargesItem, documentationItem, conditionsItem];
+        items.forEach(item => item.classList.remove('active')); // Remove active class from all items
+
+        switch (section) {
+            case 'about':
+                aboutItem.classList.add('active');
+                break;
+            case 'features':
+                featuresItem.classList.add('active');
+                break;
+            case 'pricing':
+                pricingItem.classList.add('active');
+                break;
+            case 'charges':
+                chargesItem.classList.add('active');
+                break;
+            case 'documentation':
+                documentationItem.classList.add('active');
+                break;
+            case 'conditions':
+                conditionsItem.classList.add('active');
+                break;
+        }
     }
 
     // Click events for section items
@@ -48,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
         channel.addEventListener('click', (event) => {
             currentChannel = event.currentTarget.getAttribute('data-channel');
 
-            // Reset the content to the "About" section for the new channel
-            updateContent('about');
+            // Reset the content to the "Features" section for the new channel
+            updateContent('features');
 
             // Update the hover style class based on the selected channel
             if (currentChannel === 'moneygram') {
@@ -63,4 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Set the default content to MoneyGram 'features' and make "Features" active
+    updateContent('features');
 });
